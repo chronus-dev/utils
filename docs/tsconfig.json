@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es2023",
+        "module": "esnext",
+        "lib": ["ES2023", "DOM"],
+        "types": ["vitepress/client"],
+        "moduleResolution": "bundler",
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "strict": true,
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "verbatimModuleSyntax": true,
+        "erasableSyntaxOnly": true,
+        "newLine": "LF"
+    },
+    "include": ["**/*.ts", ".vitepress/**/*.ts", ".vitepress/**/*.vue"]
+}

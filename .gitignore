@@ -1,0 +1,10 @@
+# dependencies
+node_modules
+dist
+
+# docs
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# eslint
+.eslintcache

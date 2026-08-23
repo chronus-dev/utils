@@ -1,0 +1,16 @@
+{
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "package.json": "package-lock.json, .gitattributes, .gitignore, pnpm-lock.yaml, pnpm-workspace.yaml",
+        "tsconfig.json": "tsconfig.json",
+        "eslint.config.*": ".eslintcache, .prettierignore, .prettierrc, .editorconfig, commitlint.config.*",
+        "rollup.config.*": "vitest.config.*",
+        "README.md": "LICENSE"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

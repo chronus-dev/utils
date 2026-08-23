@@ -1,0 +1,76 @@
+{
+    "name": "@chronus-dev/utils",
+    "version": "0.0.5",
+    "author": "LanXiao",
+    "description": "Internal utility functions and types shared across @chronus-dev packages.",
+    "keywords": [
+        "utils",
+        "chronus"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chronus-dev/utils.git"
+    },
+    "main": "dist/index.cjs",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "type": "module",
+    "license": "MIT",
+    "sideEffects": false,
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "postinstall": "simple-git-hooks",
+        "lint": "eslint --cache --concurrency auto .",
+        "lint:fix": "eslint --cache --fix --concurrency auto .",
+        "format": "prettier --cache --check --experimental-cli .",
+        "format:fix": "prettier --cache --write --experimental-cli .",
+        "docs:dev": "pnpm --dir docs run docs:dev",
+        "docs:build": "pnpm --dir docs run docs:build",
+        "docs:preview": "pnpm --dir docs run docs:preview",
+        "test": "vitest",
+        "build": "premove dist && rollup --config rollup.config.js"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.4",
+        "@rollup/plugin-terser": "^1.0.0",
+        "@rollup/plugin-typescript": "^12.3.0",
+        "eslint": "^9.39.4",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-import-x": "^4.16.2",
+        "eslint-plugin-jsdoc": "^63.0.0",
+        "globals": "^17.6.0",
+        "lint-staged": "^17.0.5",
+        "premove": "^4.0.0",
+        "prettier": "^3.8.3",
+        "rollup": "^4.60.4",
+        "rollup-plugin-dts": "^6.4.1",
+        "simple-git-hooks": "^2.13.1",
+        "tslib": "^2.8.1",
+        "typescript": "^6.0.3",
+        "typescript-eslint": "^8.60.0",
+        "vitest": "^4.1.7"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "pnpm exec lint-staged --concurrent false"
+    },
+    "lint-staged": {
+        "*.{ts,js}": [
+            "eslint --cache --fix --concurrency auto",
+            "prettier --cache --write --experimental-cli"
+        ]
+    },
+    "engines": {
+        "node": ">=22.17.0"
+    },
+    "packageManager": "pnpm@11.3.0"
+}
