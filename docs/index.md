@@ -7,7 +7,7 @@ hero:
     tagline: Make everyday JavaScript and TypeScript development simpler
     actions:
         - theme: brand
-          text: Get started
+          text: Get Started
           link: /guide/getting-started
         - theme: alt
           text: API Reference
