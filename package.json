@@ -7,9 +7,13 @@
         "utils",
         "chronus"
     ],
+    "homepage": "https://utils.chronus.dev",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/chronus-dev/utils.git"
+    },
+    "bugs": {
+        "url": "https://github.com/chronus-dev/utils/issues"
     },
     "main": "dist/index.cjs",
     "module": "dist/index.mjs",
