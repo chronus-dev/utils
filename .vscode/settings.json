@@ -2,10 +2,10 @@
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
-        "package.json": "package-lock.json, .gitattributes, .gitignore, pnpm-lock.yaml, pnpm-workspace.yaml",
-        "tsconfig.json": "tsconfig.json",
-        "eslint.config.*": ".eslintcache, .prettierignore, .prettierrc, .editorconfig, commitlint.config.*",
+        "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml",
+        "eslint.config.*": ".eslintcache, .prettierignore, .prettierrc, .editorconfig",
         "rollup.config.*": "vitest.config.*",
+        ".gitignore": ".gitattributes",
         "README.md": "LICENSE"
     },
     "editor.codeActionsOnSave": {
