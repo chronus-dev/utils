@@ -117,7 +117,7 @@ export default defineConfig({
             provider: 'local'
         },
         footer: {
-            copyright: `© 2025-${new Date().getFullYear()} LanXiao`
+            copyright: `© ${new Date().getFullYear()} LanXiao`
         }
     },
     transformHead({ page, pageData }) {
