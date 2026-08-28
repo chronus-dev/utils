@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
-
 import { isNull } from '@chronus-dev/utils'
+import { describe, expect, it } from 'vitest'
 
 describe('isNull', () => {
     it('returns true for a null value', () => {

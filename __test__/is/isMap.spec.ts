@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
-
 import { isMap } from '@chronus-dev/utils'
+import { describe, expect, it } from 'vitest'
 
 describe('isMap', () => {
     it('returns true for a map value', () => {

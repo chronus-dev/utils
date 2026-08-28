@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
-
 import { isBigInt } from '@chronus-dev/utils'
+import { describe, expect, it } from 'vitest'
 
 describe('isBigInt', () => {
     it('returns true for a bigint value', () => {

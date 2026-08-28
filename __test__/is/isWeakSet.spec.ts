@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
-
 import { isWeakSet } from '@chronus-dev/utils'
+import { describe, expect, it } from 'vitest'
 
 describe('isWeakSet', () => {
     it('returns true for a weak set value', () => {

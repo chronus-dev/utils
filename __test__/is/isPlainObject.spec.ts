@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
-
 import { isPlainObject } from '@chronus-dev/utils'
+import { describe, expect, it } from 'vitest'
 
 describe('isPlainObject', () => {
     it('returns true for a plain object value', () => {

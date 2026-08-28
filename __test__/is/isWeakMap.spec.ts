@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
-
 import { isWeakMap } from '@chronus-dev/utils'
+import { describe, expect, it } from 'vitest'
 
 describe('isWeakMap', () => {
     it('returns true for a weak map value', () => {

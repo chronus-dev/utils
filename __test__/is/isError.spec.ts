@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
-
 import { isError } from '@chronus-dev/utils'
+import { describe, expect, it } from 'vitest'
 
 describe('isError', () => {
     it('returns true for an error value', () => {

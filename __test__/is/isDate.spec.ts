@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
-
 import { isDate } from '@chronus-dev/utils'
+import { describe, expect, it } from 'vitest'
 
 describe('isDate', () => {
     it('returns true for a date value', () => {

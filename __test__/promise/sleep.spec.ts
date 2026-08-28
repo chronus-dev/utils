@@ -1,6 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-
 import { sleep } from '@chronus-dev/utils'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 describe('sleep', () => {
     beforeEach(() => {
