@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isPromise } from '../../src/is/isPromise'
+import { isPromise } from '@chronus-dev/utils'
 
 describe('isPromise', () => {
     it('returns true for a promise value', () => {

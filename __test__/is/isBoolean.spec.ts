@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isBoolean } from '../../src/is/isBoolean'
+import { isBoolean } from '@chronus-dev/utils'
 
 describe('isBoolean', () => {
     it('returns true for a boolean value', () => {

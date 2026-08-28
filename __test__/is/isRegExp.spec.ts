@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isRegExp } from '../../src/is/isRegExp'
+import { isRegExp } from '@chronus-dev/utils'
 
 describe('isRegExp', () => {
     it('returns true for a regexp value', () => {

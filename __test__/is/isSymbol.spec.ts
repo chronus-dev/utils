@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isSymbol } from '../../src/is/isSymbol'
+import { isSymbol } from '@chronus-dev/utils'
 
 describe('isSymbol', () => {
     it('returns true for a symbol value', () => {

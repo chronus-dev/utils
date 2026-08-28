@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isSet } from '../../src/is/isSet'
+import { isSet } from '@chronus-dev/utils'
 
 describe('isSet', () => {
     it('returns true for a set value', () => {
