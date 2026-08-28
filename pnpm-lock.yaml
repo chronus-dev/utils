@@ -295,7 +295,7 @@ importers:
         specifier: ^3.9.6
         version: 3.9.6
       rollup:
-        specifier: ^4.62.5
+        specifier: ^4.63.0
         version: 4.63.0
       rollup-plugin-dts:
         specifier: ^6.5.1
