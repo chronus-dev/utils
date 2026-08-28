@@ -45,13 +45,13 @@
         "build": "premove dist && rollup --config rollup.config.js"
     },
     "devDependencies": {
-        "@eslint/js": "^9.39.4",
+        "@eslint/js": "^9.39.5",
         "@rollup/plugin-terser": "^1.0.0",
         "@rollup/plugin-typescript": "^12.3.0",
-        "eslint": "^9.39.4",
+        "eslint": "^9.39.5",
         "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-import-x": "^4.16.2",
-        "eslint-plugin-jsdoc": "^63.0.0",
+        "eslint-plugin-import-x": "^4.17.1",
+        "eslint-plugin-jsdoc": "^63.3.3",
         "globals": "^17.11.0",
         "lint-staged": "^17.3.0",
         "premove": "^4.0.0",
@@ -61,7 +61,7 @@
         "simple-git-hooks": "^2.13.1",
         "tslib": "^2.8.1",
         "typescript": "^6.0.3",
-        "typescript-eslint": "^8.60.0",
+        "typescript-eslint": "^8.68.0",
         "vitest": "^4.1.11"
     },
     "simple-git-hooks": {
