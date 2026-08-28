@@ -1,6 +1,5 @@
+import { isUndefined } from '@chronus-dev/utils'
 import { describe, expect, it } from 'vitest'
-
-import { isUndefined } from '../../src/is/isUndefined'
 
 describe('isUndefined', () => {
     it('returns true for an undefined value', () => {

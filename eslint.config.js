@@ -46,6 +46,12 @@ export default defineConfig(
                         ['internal', 'parent', 'sibling', 'index'],
                         'type'
                     ],
+                    'pathGroups': [
+                        {
+                            pattern: '@chronus-dev/utils',
+                            group: 'external'
+                        }
+                    ],
                     'newlines-between': 'always',
                     'alphabetize': {
                         order: 'asc',

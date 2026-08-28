@@ -1,6 +1,5 @@
+import { hasOwn } from '@chronus-dev/utils'
 import { describe, expect, it } from 'vitest'
-
-import { hasOwn } from '../../src/object/hasOwn'
 
 describe('hasOwn', () => {
     it('returns true for an own property', () => {

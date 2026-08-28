@@ -1,6 +1,5 @@
+import { isNumber } from '@chronus-dev/utils'
 import { describe, expect, it } from 'vitest'
-
-import { isNumber } from '../../src/is/isNumber'
 
 describe('isNumber', () => {
     it('returns true for a number value', () => {

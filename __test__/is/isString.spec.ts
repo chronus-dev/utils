@@ -1,6 +1,5 @@
+import { isString } from '@chronus-dev/utils'
 import { describe, expect, it } from 'vitest'
-
-import { isString } from '../../src/is/isString'
 
 describe('isString', () => {
     it('returns true for a string value', () => {

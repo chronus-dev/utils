@@ -1,6 +1,5 @@
+import { isArray } from '@chronus-dev/utils'
 import { describe, expect, it } from 'vitest'
-
-import { isArray } from '../../src/is/isArray'
 
 describe('isArray', () => {
     it('returns true for an array value', () => {

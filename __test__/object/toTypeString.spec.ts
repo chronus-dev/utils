@@ -1,6 +1,5 @@
+import { toTypeString } from '@chronus-dev/utils'
 import { describe, expect, it } from 'vitest'
-
-import { toTypeString } from '../../src/object/toTypeString'
 
 describe('toTypeString', () => {
     it('returns the type tag for an object value', () => {

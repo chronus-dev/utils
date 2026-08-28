@@ -1,6 +1,5 @@
+import { isFunction } from '@chronus-dev/utils'
 import { describe, expect, it } from 'vitest'
-
-import { isFunction } from '../../src/is/isFunction'
 
 describe('isFunction', () => {
     it('returns true for a function value', () => {
