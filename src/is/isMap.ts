@@ -13,5 +13,5 @@ import { toTypeString } from '../object'
  * ```
  */
 export function isMap(value: unknown): value is Map<any, any> {
-    return toTypeString(value) === '[object Map]'
+  return toTypeString(value) === '[object Map]'
 }

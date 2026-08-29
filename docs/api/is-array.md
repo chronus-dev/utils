@@ -26,6 +26,6 @@ import { isArray } from '@chronus-dev/utils'
 const fruits: unknown = ['apple', 'banana']
 
 if (isArray(fruits)) {
-    fruits.push('orange') // => ['apple', 'banana', 'orange']
+  fruits.push('orange') // => ['apple', 'banana', 'orange']
 }
 ```

@@ -13,5 +13,5 @@ import { toTypeString } from '../object'
  * ```
  */
 export function isDate(value: unknown): value is Date {
-    return toTypeString(value) === '[object Date]'
+  return toTypeString(value) === '[object Date]'
 }

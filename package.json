@@ -1,80 +1,80 @@
 {
-    "name": "@chronus-dev/utils",
-    "version": "0.1.0",
-    "author": "LanXiao",
-    "description": "Internal utility functions and types shared across @chronus-dev packages.",
-    "keywords": [
-        "utils",
-        "chronus"
-    ],
-    "homepage": "https://utils.chronus.dev",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/chronus-dev/utils.git"
-    },
-    "bugs": {
-        "url": "https://github.com/chronus-dev/utils/issues"
-    },
-    "main": "dist/index.cjs",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs"
-        }
-    },
-    "files": [
-        "dist"
-    ],
-    "type": "module",
-    "license": "MIT",
-    "sideEffects": false,
-    "scripts": {
-        "preinstall": "npx only-allow pnpm",
-        "postinstall": "simple-git-hooks",
-        "lint": "eslint --cache --concurrency auto .",
-        "lint:fix": "eslint --cache --fix --concurrency auto .",
-        "format": "prettier --cache --check --experimental-cli .",
-        "format:fix": "prettier --cache --write --experimental-cli .",
-        "docs:dev": "pnpm --dir docs run docs:dev",
-        "docs:build": "pnpm --dir docs run docs:build",
-        "docs:preview": "pnpm --dir docs run docs:preview",
-        "test": "vitest",
-        "build": "premove dist && rollup --config rollup.config.js"
-    },
-    "devDependencies": {
-        "@eslint/js": "^10.0.1",
-        "@rollup/plugin-terser": "^1.0.0",
-        "@rollup/plugin-typescript": "^12.3.0",
-        "eslint": "^10.9.1",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-import-x": "^4.17.1",
-        "eslint-plugin-jsdoc": "^64.2.1",
-        "globals": "^17.11.0",
-        "lint-staged": "^17.3.0",
-        "premove": "^4.0.0",
-        "prettier": "^3.9.6",
-        "rollup": "^4.63.0",
-        "rollup-plugin-dts": "^6.5.1",
-        "simple-git-hooks": "^2.13.1",
-        "tslib": "^2.8.1",
-        "typescript": "^6.0.3",
-        "typescript-eslint": "^8.68.0",
-        "vitest": "^4.1.11"
-    },
-    "simple-git-hooks": {
-        "pre-commit": "pnpm exec lint-staged --concurrent false"
-    },
-    "lint-staged": {
-        "*.{ts,js}": [
-            "eslint --cache --fix --concurrency auto",
-            "prettier --cache --write --experimental-cli"
-        ]
-    },
-    "engines": {
-        "node": ">=24.20.0"
-    },
-    "packageManager": "pnpm@11.24.0"
+  "name": "@chronus-dev/utils",
+  "version": "0.1.0",
+  "author": "LanXiao",
+  "description": "Internal utility functions and types shared across @chronus-dev packages.",
+  "keywords": [
+    "utils",
+    "chronus"
+  ],
+  "homepage": "https://utils.chronus.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chronus-dev/utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chronus-dev/utils/issues"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "lint": "eslint --cache --concurrency auto .",
+    "lint:fix": "eslint --cache --fix --concurrency auto .",
+    "format": "prettier --cache --check --experimental-cli .",
+    "format:fix": "prettier --cache --write --experimental-cli .",
+    "docs:dev": "pnpm --dir docs run docs:dev",
+    "docs:build": "pnpm --dir docs run docs:build",
+    "docs:preview": "pnpm --dir docs run docs:preview",
+    "test": "vitest",
+    "build": "premove dist && rollup --config rollup.config.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "eslint": "^10.9.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-jsdoc": "^64.2.1",
+    "globals": "^17.11.0",
+    "lint-staged": "^17.3.0",
+    "premove": "^4.0.0",
+    "prettier": "^3.9.6",
+    "rollup": "^4.63.0",
+    "rollup-plugin-dts": "^6.5.1",
+    "simple-git-hooks": "^2.13.1",
+    "tslib": "^2.8.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.68.0",
+    "vitest": "^4.1.11"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --concurrent false"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --cache --fix --concurrency auto",
+      "prettier --cache --write --experimental-cli"
+    ]
+  },
+  "engines": {
+    "node": ">=24.20.0"
+  },
+  "packageManager": "pnpm@11.24.0"
 }

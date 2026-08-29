@@ -24,11 +24,11 @@ Returns `true` if `value` is a map, else `false`.
 import { isMap } from '@chronus-dev/utils'
 
 const fruits: unknown = new Map([
-    ['apple', 1],
-    ['banana', 2]
+  ['apple', 1],
+  ['banana', 2],
 ])
 
 if (isMap(fruits)) {
-    fruits.set('orange', 3) // => { 'apple' => 1, 'banana' => 2, 'orange' => 3 }
+  fruits.set('orange', 3) // => { 'apple' => 1, 'banana' => 2, 'orange' => 3 }
 }
 ```

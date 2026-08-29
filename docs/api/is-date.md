@@ -26,6 +26,6 @@ import { isDate } from '@chronus-dev/utils'
 const date: unknown = new Date('2026-01-01')
 
 if (isDate(date)) {
-    console.log(date.getFullYear()) // => 2026
+  console.log(date.getFullYear()) // => 2026
 }
 ```

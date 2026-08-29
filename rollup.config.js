@@ -11,28 +11,28 @@ const banner = `/*!
  */`
 
 export default [
-    {
-        input: 'src/index.ts',
-        output: [
-            {
-                file: 'dist/index.cjs',
-                format: 'cjs',
-                banner
-            },
-            {
-                file: 'dist/index.mjs',
-                format: 'esm',
-                banner
-            }
-        ],
-        plugins: [pluginTypescript(), pluginTerser()]
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        file: 'dist/index.cjs',
+        format: 'cjs',
+        banner,
+      },
+      {
+        file: 'dist/index.mjs',
+        format: 'esm',
+        banner,
+      },
+    ],
+    plugins: [pluginTypescript(), pluginTerser()],
+  },
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/index.d.ts',
+      format: 'esm',
     },
-    {
-        input: 'src/index.ts',
-        output: {
-            file: 'dist/index.d.ts',
-            format: 'esm'
-        },
-        plugins: [pluginDts()]
-    }
+    plugins: [pluginDts()],
+  },
 ]

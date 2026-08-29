@@ -15,8 +15,8 @@ const objectHasOwnProperty = Object.prototype.hasOwnProperty
  * ```
  */
 export function hasOwn<T extends object>(
-    object: T,
-    key: PropertyKey
+  object: T,
+  key: PropertyKey,
 ): key is keyof T {
-    return objectHasOwnProperty.call(object, key)
+  return objectHasOwnProperty.call(object, key)
 }

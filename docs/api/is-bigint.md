@@ -26,6 +26,6 @@ import { isBigInt } from '@chronus-dev/utils'
 const count: unknown = 100n
 
 if (isBigInt(count)) {
-    console.log(count + 200n) // => 300n
+  console.log(count + 200n) // => 300n
 }
 ```

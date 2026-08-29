@@ -24,10 +24,10 @@ Returns `true` if `value` is a function, else `false`.
 import { isFunction } from '@chronus-dev/utils'
 
 const callback: unknown = () => {
-    console.log('Hello')
+  console.log('Hello')
 }
 
 if (isFunction(callback)) {
-    callback() // => 'Hello'
+  callback() // => 'Hello'
 }
 ```

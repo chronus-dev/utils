@@ -26,6 +26,6 @@ import { isString } from '@chronus-dev/utils'
 const name: unknown = 'Alice'
 
 if (isString(name)) {
-    console.log(name.toUpperCase()) // => 'ALICE'
+  console.log(name.toUpperCase()) // => 'ALICE'
 }
 ```

@@ -30,6 +30,6 @@ import { isArray } from '@chronus-dev/utils'
 const fruits: unknown = ['apple', 'banana']
 
 if (isArray(fruits)) {
-    fruits.push('orange')
+  fruits.push('orange')
 }
 ```

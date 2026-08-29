@@ -4,7 +4,7 @@ Prettifies a type by expanding its properties into a simplified object type.
 
 ```ts
 type Prettify<T> = {
-    [K in keyof T]: T[K]
+  [K in keyof T]: T[K]
 } & {}
 ```
 

@@ -26,6 +26,6 @@ import { isNumber } from '@chronus-dev/utils'
 const count: unknown = 100
 
 if (isNumber(count)) {
-    console.log(count + 200) // => 300
+  console.log(count + 200) // => 300
 }
 ```

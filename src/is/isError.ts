@@ -13,5 +13,5 @@ import { toTypeString } from '../object'
  * ```
  */
 export function isError(value: unknown): value is Error {
-    return toTypeString(value) === '[object Error]'
+  return toTypeString(value) === '[object Error]'
 }

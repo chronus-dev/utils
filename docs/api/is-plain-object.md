@@ -26,6 +26,6 @@ import { isPlainObject } from '@chronus-dev/utils'
 const date: unknown = new Date()
 
 if (!isPlainObject(date)) {
-    console.log('Not a plain object') // => 'Not a plain object'
+  console.log('Not a plain object') // => 'Not a plain object'
 }
 ```

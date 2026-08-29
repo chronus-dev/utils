@@ -3,36 +3,36 @@ name: Deploy Docs
 permissions: {}
 
 on:
-    push:
-        branches:
-            - main
-        paths:
-            - 'docs/**'
-            - '.github/workflows/deploy-docs.yml'
-            - '.github/actions/deploy-docs/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - '.github/workflows/deploy-docs.yml'
+      - '.github/actions/deploy-docs/**'
 
 concurrency:
-    group: deploy-docs
-    cancel-in-progress: true
+  group: deploy-docs
+  cancel-in-progress: true
 
 defaults:
-    run:
-        shell: bash
+  run:
+    shell: bash
 
 jobs:
-    deploy-docs:
-        name: Deploy docs
-        runs-on: ubuntu-latest
-        if: github.repository == 'chronus-dev/utils'
-        permissions:
-            contents: read
-        steps:
-            - name: Checkout
-              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
-              with:
-                  persist-credentials: false
+  deploy-docs:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    if: github.repository == 'chronus-dev/utils'
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
+        with:
+          persist-credentials: false
 
-            - uses: ./.github/actions/deploy-docs
-              with:
-                  netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-                  netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+      - uses: ./.github/actions/deploy-docs
+        with:
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}

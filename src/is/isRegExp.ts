@@ -13,5 +13,5 @@ import { toTypeString } from '../object'
  * ```
  */
 export function isRegExp(value: unknown): value is RegExp {
-    return toTypeString(value) === '[object RegExp]'
+  return toTypeString(value) === '[object RegExp]'
 }
