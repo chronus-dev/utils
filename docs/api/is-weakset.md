@@ -27,6 +27,6 @@ const fruits: unknown = new WeakSet()
 const apple = {}
 
 if (isWeakSet(fruits)) {
-    fruits.add(apple) // => { {…} }
+  fruits.add(apple) // => { {…} }
 }
 ```

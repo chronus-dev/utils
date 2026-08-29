@@ -26,6 +26,6 @@ import { isSymbol } from '@chronus-dev/utils'
 const key: unknown = Symbol('id')
 
 if (isSymbol(key)) {
-    console.log(key.description) // => 'id'
+  console.log(key.description) // => 'id'
 }
 ```

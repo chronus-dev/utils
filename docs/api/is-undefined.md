@@ -26,6 +26,6 @@ import { isUndefined } from '@chronus-dev/utils'
 const name: unknown = undefined
 
 if (isUndefined(name)) {
-    console.log('Name is undefined') // => 'Name is undefined'
+  console.log('Name is undefined') // => 'Name is undefined'
 }
 ```

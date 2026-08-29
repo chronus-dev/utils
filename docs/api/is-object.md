@@ -26,6 +26,6 @@ import { isObject } from '@chronus-dev/utils'
 const user: unknown = { name: 'Alice' }
 
 if (isObject(user)) {
-    Object.assign(user, { age: 18 }) // => { name: 'Alice', age: 18 }
+  Object.assign(user, { age: 18 }) // => { name: 'Alice', age: 18 }
 }
 ```

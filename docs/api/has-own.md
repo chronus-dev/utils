@@ -41,6 +41,6 @@ const user: object = { name: 'Alice', age: 18 }
 const key = 'name'
 
 if (hasOwn(user, key)) {
-    console.log(user[key]) // => 'Alice'
+  console.log(user[key]) // => 'Alice'
 }
 ```

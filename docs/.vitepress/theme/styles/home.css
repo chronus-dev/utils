@@ -1,23 +1,23 @@
 :root {
-    --vp-home-hero-name-color: transparent;
-    --vp-home-hero-name-background: linear-gradient(
-        150deg,
-        #a855f7 0%,
-        #6366f1 50%,
-        #06b6d4 100%
-    );
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    150deg,
+    #a855f7 0%,
+    #6366f1 50%,
+    #06b6d4 100%
+  );
 
-    --vp-home-hero-image-filter: blur(44px);
+  --vp-home-hero-image-filter: blur(44px);
 }
 
 @media (min-width: 640px) {
-    :root {
-        --vp-home-hero-image-filter: blur(56px);
-    }
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
 }
 
 @media (min-width: 960px) {
-    :root {
-        --vp-home-hero-image-filter: blur(68px);
-    }
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
 }

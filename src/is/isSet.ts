@@ -13,5 +13,5 @@ import { toTypeString } from '../object'
  * ```
  */
 export function isSet(value: unknown): value is Set<any> {
-    return toTypeString(value) === '[object Set]'
+  return toTypeString(value) === '[object Set]'
 }

@@ -1,8 +1,8 @@
 packages:
-    - '.'
-    - 'docs'
+  - '.'
+  - 'docs'
 
 allowBuilds:
-    esbuild: true
-    simple-git-hooks: true
-    unrs-resolver: true
+  esbuild: true
+  simple-git-hooks: true
+  unrs-resolver: true

@@ -26,6 +26,6 @@ import { isError } from '@chronus-dev/utils'
 const error: unknown = new Error('Something went wrong')
 
 if (isError(error)) {
-    console.log(error.message) // => 'Something went wrong'
+  console.log(error.message) // => 'Something went wrong'
 }
 ```

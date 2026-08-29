@@ -1,10 +1,10 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["config:recommended", "github>chronus-dev/renovate-config"],
-    "packageRules": [
-        {
-            "groupName": "eslint packages",
-            "matchPackageNames": ["/eslint/"]
-        }
-    ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "github>chronus-dev/renovate-config"],
+  "packageRules": [
+    {
+      "groupName": "eslint packages",
+      "matchPackageNames": ["/eslint/"]
+    }
+  ]
 }

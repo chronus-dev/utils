@@ -13,5 +13,5 @@ import { toTypeString } from '../object'
  * ```
  */
 export function isWeakMap(value: unknown): value is WeakMap<WeakKey, any> {
-    return toTypeString(value) === '[object WeakMap]'
+  return toTypeString(value) === '[object WeakMap]'
 }

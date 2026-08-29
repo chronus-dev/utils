@@ -26,6 +26,6 @@ import { isBoolean } from '@chronus-dev/utils'
 let enabled: unknown = true
 
 if (isBoolean(enabled)) {
-    console.log(!enabled) // => false
+  console.log(!enabled) // => false
 }
 ```

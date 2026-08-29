@@ -15,9 +15,9 @@ import { isObject } from './isObject'
  * ```
  */
 export function isPromise<T = any>(value: unknown): value is Promise<T> {
-    return (
-        (isObject(value) || isFunction(value)) &&
-        isFunction((value as any).then) &&
-        isFunction((value as any).catch)
-    )
+  return (
+    (isObject(value) || isFunction(value)) &&
+    isFunction((value as any).then) &&
+    isFunction((value as any).catch)
+  )
 }

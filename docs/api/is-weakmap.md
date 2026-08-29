@@ -27,6 +27,6 @@ const fruits: unknown = new WeakMap()
 const apple = {}
 
 if (isWeakMap(fruits)) {
-    fruits.set(apple, 1) // => { {…} => 1 }
+  fruits.set(apple, 1) // => { {…} => 1 }
 }
 ```

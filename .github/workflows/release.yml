@@ -3,111 +3,111 @@ name: Release
 permissions: {}
 
 on:
-    push:
-        branches:
-            - main
-        paths:
-            - 'package.json'
+  push:
+    branches:
+      - main
+    paths:
+      - 'package.json'
 
 defaults:
-    run:
-        shell: bash
+  run:
+    shell: bash
 
 jobs:
-    detect-changes:
-        name: Detect changes
-        runs-on: ubuntu-latest
-        if: github.repository == 'chronus-dev/utils'
-        permissions:
-            contents: read
-        outputs:
-            version-changed: ${{ steps.version.outputs.changed == 'true' }}
-            version: ${{ steps.version.outputs.version }}
-        steps:
-            - name: Checkout
-              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
-              with:
-                  persist-credentials: false
+  detect-changes:
+    name: Detect changes
+    runs-on: ubuntu-latest
+    if: github.repository == 'chronus-dev/utils'
+    permissions:
+      contents: read
+    outputs:
+      version-changed: ${{ steps.version.outputs.changed == 'true' }}
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
+        with:
+          persist-credentials: false
 
-            - name: Check version changes
-              id: version
-              uses: EndBug/version-check@095362f3cd50f690c8fa0e6afeea81834bd8d320 # v3.0.0
-              with:
-                  static-checking: localIsNew
-                  file-url: https://unpkg.com/@chronus-dev/utils@latest/package.json
-                  file-name: package.json
+      - name: Check version changes
+        id: version
+        uses: EndBug/version-check@095362f3cd50f690c8fa0e6afeea81834bd8d320 # v3.0.0
+        with:
+          static-checking: localIsNew
+          file-url: https://unpkg.com/@chronus-dev/utils@latest/package.json
+          file-name: package.json
 
-    release:
-        name: Release
-        runs-on: ubuntu-latest
-        environment: release
-        needs: detect-changes
-        if: needs.detect-changes.outputs.version-changed == 'true'
-        permissions:
-            contents: write
-            id-token: write
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    environment: release
+    needs: detect-changes
+    if: needs.detect-changes.outputs.version-changed == 'true'
+    permissions:
+      contents: write
+      id-token: write
+    env:
+      VERSION: ${{ needs.detect-changes.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 #v6.0.10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 #v7.0.0
+        with:
+          node-version-file: '.node-version'
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build package
+        run: pnpm build
+
+      - name: Publish package
+        run: pnpm publish --tag latest --access public --no-git-checks
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 #v3.0.2
+        with:
+          draft: true
+          make_latest: true
+          prerelease: false
+          generate_release_notes: true
+          name: v${{ env.VERSION }}
+          tag_name: v${{ env.VERSION }}
+          target_commitish: ${{ github.sha }}
+
+      - name: Publish GitHub Release
         env:
-            VERSION: ${{ needs.detect-changes.outputs.version }}
-        steps:
-            - name: Checkout
-              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
-              with:
-                  persist-credentials: false
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release edit "v${VERSION}" --draft=false --repo "${{ github.repository }}"
 
-            - name: Setup pnpm
-              uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 #v6.0.10
+  deploy-docs:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    needs: [detect-changes, release]
+    if: >-
+      needs.detect-changes.outputs.version-changed == 'true' &&
+      !contains(needs.detect-changes.outputs.version, '-')
+    concurrency:
+      group: deploy-docs
+      cancel-in-progress: false
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
+        with:
+          persist-credentials: false
 
-            - name: Setup Node.js
-              uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 #v7.0.0
-              with:
-                  node-version-file: '.node-version'
-                  registry-url: https://registry.npmjs.org
-                  cache: pnpm
-
-            - name: Install dependencies
-              run: pnpm install --frozen-lockfile
-
-            - name: Build package
-              run: pnpm build
-
-            - name: Publish package
-              run: pnpm publish --tag latest --access public --no-git-checks
-
-            - name: Create GitHub Release
-              uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 #v3.0.2
-              with:
-                  draft: true
-                  make_latest: true
-                  prerelease: false
-                  generate_release_notes: true
-                  name: v${{ env.VERSION }}
-                  tag_name: v${{ env.VERSION }}
-                  target_commitish: ${{ github.sha }}
-
-            - name: Publish GitHub Release
-              env:
-                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: gh release edit "v${VERSION}" --draft=false --repo "${{ github.repository }}"
-
-    deploy-docs:
-        name: Deploy docs
-        runs-on: ubuntu-latest
-        needs: [detect-changes, release]
-        if: >-
-            needs.detect-changes.outputs.version-changed == 'true' &&
-            !contains(needs.detect-changes.outputs.version, '-')
-        concurrency:
-            group: deploy-docs
-            cancel-in-progress: false
-        permissions:
-            contents: read
-        steps:
-            - name: Checkout
-              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
-              with:
-                  persist-credentials: false
-
-            - uses: ./.github/actions/deploy-docs
-              with:
-                  netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-                  netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+      - uses: ./.github/actions/deploy-docs
+        with:
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}

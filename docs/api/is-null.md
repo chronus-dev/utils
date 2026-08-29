@@ -26,6 +26,6 @@ import { isNull } from '@chronus-dev/utils'
 const name: unknown = null
 
 if (isNull(name)) {
-    console.log('Name is null') // => 'Name is null'
+  console.log('Name is null') // => 'Name is null'
 }
 ```

@@ -26,6 +26,6 @@ import { isRegExp } from '@chronus-dev/utils'
 const pattern: unknown = /hello/
 
 if (isRegExp(pattern)) {
-    console.log(pattern.test('hello')) // => true
+  console.log(pattern.test('hello')) // => true
 }
 ```

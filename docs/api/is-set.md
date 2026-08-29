@@ -26,6 +26,6 @@ import { isSet } from '@chronus-dev/utils'
 const fruits: unknown = new Set(['apple', 'banana'])
 
 if (isSet(fruits)) {
-    fruits.add('orange') // => { 'apple', 'banana', 'orange' }
+  fruits.add('orange') // => { 'apple', 'banana', 'orange' }
 }
 ```

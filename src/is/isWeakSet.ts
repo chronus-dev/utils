@@ -13,5 +13,5 @@ import { toTypeString } from '../object'
  * ```
  */
 export function isWeakSet(value: unknown): value is WeakSet<WeakKey> {
-    return toTypeString(value) === '[object WeakSet]'
+  return toTypeString(value) === '[object WeakSet]'
 }

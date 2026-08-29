@@ -16,11 +16,11 @@ import { toTypeString } from '../object'
  * ```
  */
 export function isPlainObject(value: unknown): value is object {
-    if (toTypeString(value) !== '[object Object]') {
-        return false
-    }
+  if (toTypeString(value) !== '[object Object]') {
+    return false
+  }
 
-    const prototype = Object.getPrototypeOf(value)
+  const prototype = Object.getPrototypeOf(value)
 
-    return prototype === Object.prototype || prototype === null
+  return prototype === Object.prototype || prototype === null
 }

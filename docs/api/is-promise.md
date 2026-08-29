@@ -36,8 +36,8 @@ import { isPromise } from '@chronus-dev/utils'
 const result: unknown = Promise.resolve(100)
 
 if (isPromise<number>(result)) {
-    result.then((price) => {
-        console.log(price) // => 100
-    })
+  result.then((price) => {
+    console.log(price) // => 100
+  })
 }
 ```
