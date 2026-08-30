@@ -25,7 +25,12 @@ export default [
         banner,
       },
     ],
-    plugins: [pluginTypescript(), pluginTerser()],
+    plugins: [
+      pluginTypescript({
+        tsconfig: 'tsconfig.lib.json',
+      }),
+      pluginTerser(),
+    ],
   },
   {
     input: 'src/index.ts',

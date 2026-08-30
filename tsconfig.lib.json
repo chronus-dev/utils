@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@chronus-dev/utils": ["./src"]
+    },
+    "target": "es2023",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "newLine": "LF"
+  },
+  "include": ["src/**/*", "__test__/**/*"]
+}
